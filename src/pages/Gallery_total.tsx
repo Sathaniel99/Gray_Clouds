@@ -1,30 +1,34 @@
+// Hooks
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Home, X } from 'lucide-react';
-import * as Dialog from "@radix-ui/react-dialog";
+// Librerias
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from '../ui/button';
+// Iconos
+import { Home, X } from 'lucide-react';
+// Componentes
+import * as Dialog from "@radix-ui/react-dialog";
+import { Button } from '@/components/ui/index';
 
 const tattoos = [
-    { id: 1, category: 'flores', image: '/tattoo-design/tattoos/tattoo_ (1).jpeg' },
-    { id: 2, category: 'flores', image: '/tattoo-design/tattoos/tattoo_ (3).jpeg' },
-    { id: 3, category: 'flores', image: '/tattoo-design/tattoos/tattoo_ (18).jpeg' },
-    { id: 4, category: 'rostros', image: '/tattoo-design/tattoos/tattoo_ (5).jpeg' },
-    { id: 5, category: 'rostros', image: '/tattoo-design/tattoos/tattoo_ (9).jpeg' },
-    { id: 6, category: 'rostros', image: '/tattoo-design/tattoos/tattoo_ (11).jpeg' },
-    { id: 7, category: 'rostros', image: '/tattoo-design/tattoos/tattoo_ (12).jpeg' },
-    { id: 8, category: 'rostros', image: '/tattoo-design/tattoos/tattoo_ (19).jpeg' },
-    { id: 9, category: 'animados', image: '/tattoo-design/tattoos/tattoo_ (8).jpeg' },
-    { id: 10, category: 'animados', image: '/tattoo-design/tattoos/tattoo_ (10).jpeg' },
-    { id: 11, category: 'animados', image: '/tattoo-design/tattoos/tattoo_ (15).jpeg' },
-    { id: 12, category: 'tribal', image: '/tattoo-design/tattoos/tattoo_ (2).jpeg' },
-    { id: 13, category: 'tribal', image: '/tattoo-design/tattoos/tattoo_ (6).jpeg' },
-    { id: 14, category: 'tribal', image: '/tattoo-design/tattoos/tattoo_ (7).jpeg' },
-    { id: 15, category: 'animales', image: '/tattoo-design/tattoos/tattoo_ (4).jpeg' },
-    { id: 16, category: 'animales', image: '/tattoo-design/tattoos/tattoo_ (13).jpeg' },
-    { id: 17, category: 'animales', image: '/tattoo-design/tattoos/tattoo_ (14).jpeg' },
-    { id: 18, category: 'animales', image: '/tattoo-design/tattoos/tattoo_ (17).jpeg' },
-    { id: 19, category: 'minimalista', image: '/tattoo-design/tattoos/tattoo_ (16).jpeg' },
+    { id: 1, category: 'flores', image: '/Gray_Clouds/tattoos/tattoo_ (1).jpeg' },
+    { id: 2, category: 'flores', image: '/Gray_Clouds/tattoos/tattoo_ (3).jpeg' },
+    { id: 3, category: 'flores', image: '/Gray_Clouds/tattoos/tattoo_ (18).jpeg' },
+    { id: 4, category: 'rostros', image: '/Gray_Clouds/tattoos/tattoo_ (5).jpeg' },
+    { id: 5, category: 'rostros', image: '/Gray_Clouds/tattoos/tattoo_ (9).jpeg' },
+    { id: 6, category: 'rostros', image: '/Gray_Clouds/tattoos/tattoo_ (11).jpeg' },
+    { id: 7, category: 'rostros', image: '/Gray_Clouds/tattoos/tattoo_ (12).jpeg' },
+    { id: 8, category: 'rostros', image: '/Gray_Clouds/tattoos/tattoo_ (19).jpeg' },
+    { id: 9, category: 'animados', image: '/Gray_Clouds/tattoos/tattoo_ (8).jpeg' },
+    { id: 10, category: 'animados', image: '/Gray_Clouds/tattoos/tattoo_ (10).jpeg' },
+    { id: 11, category: 'animados', image: '/Gray_Clouds/tattoos/tattoo_ (15).jpeg' },
+    { id: 12, category: 'tribal', image: '/Gray_Clouds/tattoos/tattoo_ (2).jpeg' },
+    { id: 13, category: 'tribal', image: '/Gray_Clouds/tattoos/tattoo_ (6).jpeg' },
+    { id: 14, category: 'tribal', image: '/Gray_Clouds/tattoos/tattoo_ (7).jpeg' },
+    { id: 15, category: 'animales', image: '/Gray_Clouds/tattoos/tattoo_ (4).jpeg' },
+    { id: 16, category: 'animales', image: '/Gray_Clouds/tattoos/tattoo_ (13).jpeg' },
+    { id: 17, category: 'animales', image: '/Gray_Clouds/tattoos/tattoo_ (14).jpeg' },
+    { id: 18, category: 'animales', image: '/Gray_Clouds/tattoos/tattoo_ (17).jpeg' },
+    { id: 19, category: 'minimalista', image: '/Gray_Clouds/tattoos/tattoo_ (16).jpeg' },
 ];
 
 const categories = [
@@ -37,7 +41,7 @@ const categories = [
     { id: 'minimalista', name: 'Minimalista' },
 ];
 
-const Gallery_total = () => {
+export const Gallery_total = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [activeFilter, setActiveFilter] = useState('all');
     const navigate = useNavigate();
@@ -132,5 +136,3 @@ const Gallery_total = () => {
         </section>
     );
 };
-
-export default Gallery_total;

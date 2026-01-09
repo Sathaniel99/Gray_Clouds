@@ -1,0 +1,108 @@
+export const lang = {
+    // Header
+    header_name_page: 'Gray Clouds',
+    header_nav_button_1: 'Inicio',
+    header_nav_button_2: 'Mini-Galería',
+    header_nav_button_3: 'Acerca',
+    header_nav_button_4: 'Servicios',
+    header_nav_button_5: 'Contacto',
+    header_button: 'Reservar sesión',
+    
+    header_modal_title: 'Agendar Sesión',
+    header_modal_description: 'Completa el formulario para agendar tu sesión personalizada de tatuaje.',
+    header_label_input_modal: 'Nombre',
+    header_label_input_date: 'Fecha a Agendar',
+    header_button_accept_modal: 'Agendar',
+    header_modal_info_plus: '¿Qué sucede después?',
+    header_modal_info_1: 'Te redirigiremos a WhatsApp para confirmar',
+    header_modal_info_2: 'Coordinaremos la consulta de diseño',
+    header_modal_info_3: 'Recibirás un presupuesto detallado',
+    header_modal_msge_part_1: 'Hola, soy',
+    header_modal_msge_part_2: 'y quiero agendar una sesión para el día',
+
+
+    // Hero
+    hero_1st_btn: 'Mini-Galería',
+    hero_2nd_btn: 'Toda la Galería',
+    hero_logo: 'Logo Gray Clouds',
+
+    // Gallery
+    gallery_cat_all: 'Todos los Trabajos',
+    gallery_cat1: 'Flores',
+    gallery_cat2: 'Tribal',
+    gallery_cat3: 'Rostros',
+    gallery_cat4: 'Animales',
+    gallery_cat5: 'Animados',
+    gallery_cat6: 'Minimalista',
+    gallery_label: 'Mini-Galería',
+    gallery_text: 'Explora algunos de mis trabajos más recientes y encuentra inspiración para tu próximo tatuaje.',
+
+
+    // About
+    about: 'Acerca del Artista',
+    descript_1: 'Bienvenido al futuro del arte corporal. Soy un tatuador visionario especializado en diseños cyberpunk, geométricos y futuristas que desafían los límites del tatuaje tradicional.',
+    descript_2: 'Mi trabajo combina técnicas digitales de arte de vanguardia con una maestría en el uso de la aguja, creando piezas que parecen descargadas directamente del ciberespacio a tu piel.',
+    spec_title: 'Especialidades',
+    spec_1: 'Diseños Minimalistas',
+    spec_2: 'Geometría y Mandalas',
+    spec_3: 'Blackwork y Dotwork',
+    spec_4: 'Microrealismo y Fineline',
+    stats_t: 'Años de Experiencia',
+    stats_f: 'Seguidores',
+
+    // Services
+    services_item_1_title: 'Diseño Personalizado',
+    services_item_1_description: 'Diseños de tatuajes únicos y personalizados creados específicamente para ti.',
+    services_item_2_title: 'Microrealismo y Fineline',
+    services_item_2_description: 'Tatuajes de altísima precisión y detalle, con líneas finas y realismo en miniatura. Técnica avanzada para resultados impactantes y delicados.',
+    services_item_3_title: 'Trabajo de Cubrir',
+    services_item_3_description: 'Transforma viejos tatuajes en impresionantes nuevas obras de arte futurista.',
+    services_item_4_title: 'Servicio de Retoque',
+    services_item_4_description: 'Refresca y mejora tus tatuajes existentes',
+    services_hours: 'horas',
+    services_label: 'Servicios',
+    services_text: 'Servicios de tatuajes profesionales con un toque futurista',
+    services_reserv: 'Reserva ahora',
+    services_proces: 'El Proceso',
+    services_proces_item1_title: 'Consulta',
+    services_proces_item1_desc: 'Discute tu visión e ideas',
+    services_proces_item2_title: 'Diseño',
+    services_proces_item2_desc: 'Crea arte personalizado para ti',
+    services_proces_item3_title: 'Sesión',
+    services_proces_item3_desc: 'Proceso profesional de tatuaje',
+    services_proces_item4_title: 'Cuidado posterior',
+    services_proces_item5_desc: 'Orientación para una correcta curación',
+
+    // Contact
+    contact_msge_wsp: 'Hola, me llamo',
+    contact_toast : '¡Mensaje enviado! Te contactaremos pronto!',
+    services_location_studio: 'Ubicación del estudio',
+    services_telephone: 'Teléfono',
+    services_email: 'Correo Electrónico',
+    services_stud_hours: 'Horarios de estudio',
+    services_stud_hours_text: ['Lunes-Viernes: 10AM-8PM - ', 'Sábado: 12PM-6PM - ', 'Domingo: Cerrado'],
+    services_contact_label : 'Contáctame',
+    services_contact_text : '¿Listo para tu próximo tatuaje? Completa el formulario y me pondré en contacto contigo pronto.',
+    services_info_label : 'Información de Contacto',
+    services_follow: 'Sigue Mi Trabajo',
+    services_send_msje : 'Envía un Mensaje',
+    services_input_name_placeholder : 'Tu nombre',
+    services_input_textarea_placeholder : 'Cuéntame tu idea...',
+    services_btn: 'Enviar Mensaje',
+
+    // Footer
+    footer_name : 'Gray Clouds Tattoo',
+    footer_label : 'Transformando la piel en arte digital con tatuajes futuristas de vanguardia.',
+    footer_quick_links : 'Enlaces Rápidos',
+    footer_all_gallery : 'Toda la Galeria',
+    footer_info_studio : 'Información del Estudio',
+    footer_credits: '© 2025 Gray Clouds Tattoo. Todos los derechos reservados.',
+    footer_credits_label_1: 'Hecho con',
+    footer_credits_label_2: 'para el futuro.',
+
+
+    // Otros
+    button_cancel: 'Cancelar',
+    button_accept: 'Aceptar',
+
+}

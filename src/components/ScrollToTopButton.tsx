@@ -1,7 +1,9 @@
+// Iconos
 import { ArrowUp } from 'lucide-react';
+// Hooks
 import { useEffect, useState } from 'react';
 
-const ScrollToTopButton = () => {
+export const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,5 +34,3 @@ const ScrollToTopButton = () => {
     )
   );
 };
-
-export default ScrollToTopButton;

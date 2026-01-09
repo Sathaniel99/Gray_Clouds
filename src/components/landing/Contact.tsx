@@ -1,10 +1,14 @@
+// Hooks
 import { useState } from 'react';
+// Iconos
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { SocialIcon } from 'react-social-icons'
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from "@/components/ui/sonner";
+// Componentes
+import { Button, Input, Textarea, toast_sonner } from "@/components/ui/index";
+// Context
+import { useTranslations } from '@/context/Languaje/useLanguaje';
+// Utiles
+import { telefono, redes, telefono_good, email, ubicacion_estudio } from '@/utils/vars';
 
 
 interface FormType {
@@ -12,11 +16,13 @@ interface FormType {
   textarea: string
 }
 
-const Contact = () => {
+export const Contact = () => {
   const [formValues, setFormValues] = useState({
     name: '',
     textarea: ''
   });
+
+  const {t} = useTranslations();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,10 +30,10 @@ const Contact = () => {
 
 
   const sendMessage = (data: FormType) => {
-    const phone = "5359017342"; // tu número sin signos ni espacios
-    const text = `Hola, me llamo ${data.name}, ${data.textarea}`;
+    const phone = telefono;
+    const text = `${t('contact_msge_wsp')} ${data.name}, ${data.textarea}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-    toast.success("¡Mensaje enviado! Te contactaremos pronto.", {
+    toast_sonner.success(t('contact_toast'), {
       duration: 2000, position: "top-center"
     })
     window.open(url, "_blank");
@@ -43,58 +49,42 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Ubicación del estudio',
-      details: ['Tatuador a Domicilio']
+      title: [t('services_location_studio')],
+      details: [ubicacion_estudio]
     },
     {
       icon: Phone,
-      title: 'Teléfono',
-      details: ['+53 59017342']
+      title: [t('services_telephone')],
+      details: [telefono_good],
     },
     {
       icon: Mail,
-      title: 'Correo Electrónico',
-      details: ['billtomth2@gmail.com']
+      title: t('services_email'),
+      details: [email],
     },
     {
       icon: Clock,
-      title: 'Horarios de estudio',
-      details: ['Lunes-Viernes: 10AM-8PM', 'Sábado: 12PM-6PM', 'Domingo: Cerrado']
+      title: t('services_stud_hours'),
+      details: [t('services_stud_hours_text')]
     }
   ];
-  const redes = [
-    {
-      url: 'https://www.instagram.com/graphite_gray_clouds'
-    },
-    {
-      url: 'https://www.threads.com/@graphite_gray_clouds'
-    },
-    {
-      url: 'https://www.facebook.com/graphite.gray.clouds'
-    },
-    {
-      url: 'https://wa.me/+5359017342'
-    }
-  ]
-
-
 
   return (
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold neon-text mb-8">
-            Contáctame
+            {t('services_contact_label')}
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            ¿Listo para tu próximo tatuaje? Completa el formulario y me pondré en contacto contigo pronto.
+            {t('services_contact_text')}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold mb-6 neon-text">Información de Contacto</h3>
+            <h3 className="text-2xl font-semibold mb-6 neon-text">{t('services_info_label')}</h3>
 
             {contactInfo.map((info, index) => (
               <div key={index} className="flex items-start space-x-4 glow-card p-6 rounded-lg">
@@ -110,7 +100,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="glow-card p-6 rounded-lg">
-              <h4 className="font-semibold mb-4">Sigue Mi Trabajo</h4>
+              <h4 className="font-semibold mb-4">{t('services_follow')}</h4>
               <div className="flex space-x-4">
                 {redes.map((platform) => (
                   <SocialIcon key={platform.url} url={platform.url} className='hover:shadow-lg hover:shadow-neutral-600 rounded-full transition-all duration-200' />
@@ -121,12 +111,12 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="glow-card p-8 rounded-lg">
-            <h3 className="text-2xl font-semibold mb-6 neon-text">Envía un Mensaje</h3>
+            <h3 className="text-2xl font-semibold mb-6 neon-text">{t('services_send_msje')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
-                  placeholder="Tu nombre"
+                  placeholder={t('services_input_name_placeholder')}
                   value={formValues.name}
                   name="name"
                   required
@@ -137,7 +127,7 @@ const Contact = () => {
 
               <div>
                 <Textarea
-                  placeholder="Cuéntame tu idea..."
+                  placeholder={t('services_input_textarea_placeholder')}
                   rows={5}
                   value={formValues.textarea}
                   name="textarea"
@@ -152,7 +142,7 @@ const Contact = () => {
                 className="w-full neon-border bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-2000 animate-glow-pulse"
               >
                 <Send className="w-4 h-4 mr-2" />
-                Enviar Mensaje
+                {t('services_btn')}
               </Button>
             </form>
           </div>
@@ -161,5 +151,3 @@ const Contact = () => {
     </section>
   );
 };
-
-export default Contact;

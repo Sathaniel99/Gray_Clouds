@@ -1,16 +1,24 @@
+// Context
+import { useTranslations } from '@/context/Languaje/useLanguaje';
+// Iconos
 import { Heart, Phone, Mail, Home } from 'lucide-react';
+// Hooks
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+// Utiles
+import { email, telefono_good, ubicacion_estudio } from '@/utils/vars';
 
-const navItems = [
-  { name: 'Mini-Galería', href: '#gallery' },
-  { name: 'Servicios', href: '#services' },
-  { name: 'Acerca', href: '#about' },
-  { name: 'Contacto', href: '#contact' }
-];
 
-const Footer = () => {
+export const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useTranslations();
+  
+  const navItems = [
+    { name: t('header_nav_button_2'), href: '#gallery' },
+    { name: t('header_nav_button_4'), href: '#services' },
+    { name: t('header_nav_button_3'), href: '#about' },
+    { name: t('header_nav_button_5'), href: '#contact' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,27 +47,27 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                src="/tattoo-design/contact/ico.png"
+                src="/Gray_Clouds/contact/ico.png"
                 alt="Logo"
                 className="h-8"
               />
-              <span className="text-xl font-bold text-primary">Gray Clouds Tattoo</span>
+              <span className="text-xl font-bold text-primary">{t('footer_name')}</span>
             </div>
             <p className="text-muted-foreground">
-              Transformando la piel en arte digital con tatuajes futuristas de vanguardia.
+              {t('footer_label')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">Enlaces Rápidos</h4>
+            <h4 className="font-semibold mb-4 text-foreground">{t('footer_quick_links')}</h4>
             <ul className="space-y-2">
               <li key={"Toda la Galeria"}>
                 <button
-                onClick={() => navigate("/gallery")}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 relative group hover:cursor-pointer"
+                  onClick={() => navigate("/gallery")}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 relative group hover:cursor-pointer"
                 >
-                  Toda la Galeria
+                  {t('footer_all_gallery')}
                 </button>
               </li>
               {navItems.map((item) => (
@@ -83,19 +91,19 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">Información del Estudio</h4>
+            <h4 className="font-semibold mb-4 text-foreground">{t('footer_info_studio')}</h4>
             <div className="space-y-2 text-muted-foreground flex flex-col">
               <div className='flex flex-row gap-2'>
                 <Home className='text-cyan-500' />
-                <p>Tatuador a Domicilio</p>
+                <p>{ubicacion_estudio}</p>
               </div>
               <div className='flex flex-row gap-2'>
                 <Phone className='text-cyan-500' />
-                <p>+53 59017342</p>
+                <p>{telefono_good}</p>
               </div>
               <div className='flex flex-row gap-2'>
                 <Mail className='text-cyan-500' />
-                <p>billtomth2@gmail.com </p>
+                <p>{email}</p>
               </div>
             </div>
           </div>
@@ -104,15 +112,13 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © 2025 Gray Clouds Tattoo. Todos los derechos reservados.
+            {t('footer_credits')}
           </p>
           <p className="text-muted-foreground text-sm flex items-center mt-4 md:mt-0">
-            Hecho con <Heart className="w-4 h-4 mx-1 text-primary" /> para el futuro
+            {t('footer_credits_label_1')} <Heart className="w-4 h-4 mx-1 text-primary" /> {t('footer_credits_label_2')}
           </p>
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;

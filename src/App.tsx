@@ -1,30 +1,32 @@
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// Componentes
+import { ScrollToTopButton } from './components/index';
+import { Landing_page, Gallery_total, NotFound } from './pages';
+import { Toaster as Sonner, TooltipProvider } from "@/components/ui/index";
+// Context
+import { LanguageProvider } from "./context/Languaje/LanguajeContext";
+// Librerias
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import ScrollToTopButton from './components/ScrollToTopButton';
-import { GlobalModalProvider } from "@/components/GlobalModalProvider";
-import Gallery_total from "@/components/Gallery_total/Gallery_total";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Sonner />
-      <GlobalModalProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        <Sonner />
         <HashRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Landing_page />} />
             <Route path="/gallery" element={<Gallery_total />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <ScrollToTopButton />
         </HashRouter>
-      </GlobalModalProvider>
-    </TooltipProvider>
+      </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 
